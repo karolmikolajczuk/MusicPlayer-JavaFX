@@ -1,0 +1,61 @@
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
+
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+
+
+
+
+<GridPane fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml"
+          hgap="10" vgap="10"
+          alignment="CENTER"
+          fx:id="mainWindowID" stylesheets="@style.css">
+
+    <GridPane GridPane.columnIndex="0" GridPane.rowIndex="0"
+              minWidth="280" maxWidth="280"
+              minHeight="100" maxHeight="100"
+              fx:id="songBarID" stylesheets="@style.css">
+
+        <Label fx:id="songName" GridPane.columnIndex="0" text="song_name"/>
+        <Slider fx:id="songLengthBar" GridPane.halignment="CENTER" GridPane.rowIndex="1"/>
+        <Label fx:id="songPresentTime" GridPane.halignment="RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="3" text="--:--"/>
+        <Label fx:id="songTime" GridPane.columnIndex="2" GridPane.rowIndex="3" text="/--:--"/>
+        <VBox fx:id="manipulateButtons" GridPane.rowIndex="4">
+            <fx:define>
+                <ToggleGroup fx:id="manipulatePlaylist"/>
+            </fx:define>
+
+            <HBox>
+                <Button fx:id="songPlayPause" text="P"/>
+                <Button fx:id="songStop" text="S"/>
+                <Button fx:id="songBefore" text="B"/>
+                <Button fx:id="songNext" text="N"/>
+                <Button fx:id="songRandom" text="R"/>
+            </HBox>
+            <HBox minWidth="200">
+                <RadioButton fx:id="playlistRoll" text="Roll" toggleGroup="$manipulatePlaylist"/>
+                <RadioButton fx:id="playlistJustNext" text="Next" toggleGroup="$manipulatePlaylist"/>
+                <RadioButton fx:id="playlistSingleSong" text="Single" toggleGroup="$manipulatePlaylist"/>
+            </HBox>
+        </VBox>
+    </GridPane>
+
+    <GridPane GridPane.columnIndex="0" GridPane.rowIndex="1"
+              minWidth="280" maxWidth="280"
+              minHeight="430" maxHeight="430"
+              fx:id="songListID"  stylesheets="@style.css">
+        <ListView fx:id="songList" stylesheets="@style.css"
+                minWidth="280" maxWidth="280"
+                minHeight="430" maxHeight="430">
+
+        </ListView>
+    </GridPane>
+
+</GridPane>

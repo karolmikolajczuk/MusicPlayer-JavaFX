@@ -1,0 +1,11 @@
+#mainWindowID {
+    -fx-background-color: silver;
+}
+
+#songBarID {
+    -fx-background-color: white;
+}
+
+#songListID {
+    -fx-background-color: orange;
+}
